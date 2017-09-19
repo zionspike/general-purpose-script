@@ -31,6 +31,10 @@
 # Please install the following software with precise version of newer
 # This script is developed with **testssl.sh version 2.8
 # This script is developed with **sslscan version: 1.11.7-static
+# root@BOEING:# which testssl.sh 
+# /bin/testssl.sh
+# root@BOEING:# ls -al /bin/testssl.sh 
+# lrwxrwxrwx 1 root root 21 Jul  5 01:20 /bin/testssl.sh -> /kapi/tool/testssl.sh
 
 import argparse
 import sys
