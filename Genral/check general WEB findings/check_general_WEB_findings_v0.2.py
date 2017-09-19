@@ -959,13 +959,27 @@ def get_csv_content(dictionary):
 	return csv_content
 
 def check_connection_to_target(url):
-	ctx = ssl.create_default_context()
-	ctx.check_hostname = False
-	ctx.verify_mode = ssl.CERT_NONE
+	print "[!] Checking connection to the target"
+	# ctx = ssl.create_default_context()
+	# ctx.check_hostname = False
+	# ctx.verify_mode = ssl.CERT_NONE
+	# try:
+	# 	urllib2.urlopen(url, timeout=5, context=ctx)
+	# 	return True
+	# except urllib2.URLError as err: 
+	# 	return False
+
+	headers = {"User-Agent": "Linux / Firefox 44: Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:44.0) Gecko/20100101 Firefox/44.0", 
+				"Accept-Encoding": "gzip, deflate",
+				"Accept": "*/*",
+				"Kapi":"Zionspike",
+				"Connection": "keep-alive"
+				}
 	try:
-		urllib2.urlopen(url, timeout=5, context=ctx)
+		r = requests.get(url, headers=headers, verify=False, timeout=5, allow_redirects=False)
 		return True
-	except urllib2.URLError as err: 
+	except Exception as e:
+		# print e
 		return False
 
 
@@ -1026,7 +1040,7 @@ if __name__ == "__main__":
 	fname = args.file_target
 	with open(fname) as f:
 		for line in f:
-			line = line.strip("\n")
+			line = line.strip()
 			print "\nURL: " + line
 			if check_connection_to_target(line) == False:
 				print bcolors.HEADER + "[!] Connection error, skipping this host" + bcolors.ENDC
