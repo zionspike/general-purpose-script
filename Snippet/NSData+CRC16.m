@@ -70,6 +70,7 @@ uint16_t gen_crc16(const uint8_t *data, uint16_t length){
 
 
 //------ Sample Use -------
+/*
 
 NSString* str = @"00020101021129370016A000000677010111011300660000000005802TH53037646304";
 NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
@@ -78,4 +79,5 @@ NSString* result = [crc16 hexadecimalString];
 result = [result uppercaseString];
 NSLog(@"%@",result);
 
+*/
 // Result should yield 8956
