@@ -19,6 +19,13 @@
  * along with this program; if not, write to the Free Software 
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA. 
  */
+
+
+/**
+ * 
+ * @description This class help calculate CRC-16/CCITT-FALSE on Android app for QRCode integrity verification
+ *
+ */
 public class CRC16 {
     /** CRC initialization value */ 
     public static short INIT_VALUE = (short) 0xffff; 

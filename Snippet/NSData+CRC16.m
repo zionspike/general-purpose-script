@@ -21,6 +21,12 @@
 
 #import "NSData+CRC16.h"
 
+
+/**
+ * 
+ * @description This class help calculate CRC-16/CCITT-FALSE on iOS app for QRCode integrity verification. Implement using Objective-C
+ *
+ */
 @implementation NSData (CRC16)
 
 - (NSData*)crc16 {
